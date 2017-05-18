@@ -1,0 +1,4 @@
+*.impute*
+*.txt
+*.vcf
+*.ld
