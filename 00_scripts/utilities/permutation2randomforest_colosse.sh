@@ -31,7 +31,7 @@ paste 01_info_file/list_indivuals.txt 01_info_file/list_condition."$NUMBER" >01_
 
 # Order strata file
 
-for i in $(cat 01_info_file/order.matrix); do grep $i 01_info_file/strata.TEMP."$NUMBER" >>strata."$NUMBER".txt
+for i in $(cat 01_info_file/order.matrix); do grep $i 01_info_file/strata.TEMP."$NUMBER" >>strata."$NUMBER".txt; done
 
 # Clean up
 

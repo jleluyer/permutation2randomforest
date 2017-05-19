@@ -29,7 +29,7 @@ names.matrix<-read.table("03_matrices/loci.matrix.txt",header=F)
 rownames(matrix.geno) = names.matrix [,1]
 
 #upload admixture
-matrix.admixture<-read.table("03_matrices/matrix.admixture.__NB__.txt",header=F)
+matrix.admixture<-read.table("03_matrices/matrix.admixture.txt",header=F)
 admix=matrix.admixture[,2]
 
 #upload strata
