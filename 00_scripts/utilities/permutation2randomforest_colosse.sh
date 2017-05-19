@@ -26,7 +26,7 @@ shuf 01_info_file/list_capilano.txt -o 01_info_file/CAP."$NUMBER"
 shuf 01_info_file/list_quinsam.txt -o 01_info_file/QUI."$NUMBER"
 
 cat 01_info_file/CAP."$NUMBER" 01_info_file/QUI."$NUMBER" >01_info_file/list_condition."$NUMBER"
-paste 01_info_file/list_indivuals.txt 01_info_file/list_condition."$NUMBER" >01_info_file/strata.TEMP."$NUMBER"
+paste 01_info_file/list_individuals.txt 01_info_file/list_condition."$NUMBER" >01_info_file/strata.TEMP."$NUMBER"
 
 
 # Order strata file
@@ -34,7 +34,8 @@ paste 01_info_file/list_indivuals.txt 01_info_file/list_condition."$NUMBER" >01_
 for i in $(cat 01_info_file/order.matrix); do grep $i 01_info_file/strata.TEMP."$NUMBER" >>strata."$NUMBER".txt; done
 
 # Clean up
-
+rm 01_info_file/QUI."$NUMBER"
+rm 01_info_file/CAP."$NUMBER"
 rm 01_info_file/strata.TEMP."$NUMBER"
 
 
@@ -50,5 +51,4 @@ Rscript RANDFOR_"$NUMBER".R
 
 #clean up
 mv RANDFOR_"$NUMBER".R 99_log
-mv SLIM_"$NUMBER".sh 99_log
-mv TOTAL_"$NUMBER".sh 99_log
+mv PERM2RF_"$NUMBER".sh 99_log
